@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* Base font size for easier rem scaling */
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  background-image: linear-gradient(to top left, #368264 0%, #2e74bf 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* LAYOUT */
+main {
+  position: relative;
+  width: 90%;
+  max-width: 120rem;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(200px);
+  border-radius: 9px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.player {
+  width: 100%;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  transition: background-color 0.5s ease;
+}
+
+.name {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.score {
+  font-size: 6rem;
+  color: white;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.current {
+  background-color: #e43265;
+  color: white;
+  width: 80%;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 9px;
+}
+
+.current-label {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.current-score {
+  font-size: 3rem;
+}
+
+.dice {
+  width: 8rem;
+  height: 8rem;
+  margin: 2rem 0;
+}
+
+/* BUTTONS */
+.btn {
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.player--active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.player--winner {
+  background-color: lightgreen;
+}
+
+.hidden {
+  display: none;
+}
+
+/* RESPONSIVE STYLES */
+@media (min-width: 768px) {
+  main {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 4rem;
+  }
+
+  .player {
+    width: 45%;
+    padding: 5rem;
+  }
+
+  .dice {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .btn {
+    padding: 1.5rem 3rem;
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    max-width: 120rem;
+    gap: 3rem;
+  }
+
+  .player {
+    padding: 6rem;
+  }
+
+  .name {
+    font-size: 4rem;
+  }
+
+  .score {
+    font-size: 7rem;
+  }
+
+  .current {
+    width: 70%;
+    padding: 2rem;
+  }
+
+  .current-label {
+    font-size: 2rem;
+  }
+
+  .current-score {
+    font-size: 4rem;
+  }
+
+  .dice {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  .btn {
+    padding: 1.7rem 3.5rem;
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 2.5rem;
+  }
+
+  .score {
+    font-size: 4rem;
+  }
+
+  .current {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .current-score {
+    font-size: 2rem;
+  }
+
+  .dice {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 1.5rem;
+  }
+}
